@@ -3,9 +3,18 @@ from math import sqrt
 
 
 class Point():
+
+    '''
+    Point class :
+        points arguments : a , b  
+    '''
+
     def __init__(self, a, b):
         self.a = a
         self.b = b
+
+    def __repr__(self):
+        return "({} , {})".format(self.a, self.b)
 
     def distance(self, other):
         try:
@@ -36,23 +45,29 @@ class Rectangle():
                 raise ValueError(
                     'the class can take one type of arguments args or kwargs')
 
-            for key, value in kwargs.items():
-                print("value =", value)
-                if not isinstance(value, Point):
-                    print('OKKK')
-                #     raise ValueError('all params must be points')
-                # self.a = kwargs['a']
-                # self.b = kwargs['b']
-                # self.c = kwargs['c']
-                # self.d = kwargs['d']
-        # self.long = args[0]
-        # self.large = args[1]
+            if len(kwargs) > 0:
+                for key, value in kwargs.items():
+                    if not isinstance(value, Point):
+                        raise ValueError('all params must be points')
+                self.a = kwargs['a']
+                self.b = kwargs['b']
+                self.c = kwargs['c']
+                self.d = kwargs['d']
+
+            if len(args) > 0:
+                self.long = args[0]
+                self.large = args[1]
 
         except ValueError as r:
             print(r)
 
-    # def __repr__(self):
-    #     return 'long : {} , large : {}'.format(self.long, self.large)
+    def __repr__(self):
+        # if len(args) > 0:
+        try:
+            return 'long : {} , large : {}'.format(self.long, self.large)
+        # if len(kwargs) > 0:
+        except:
+            return 'a = {} , b = {} , c = {} , d = {} '.format(self.a, self.b, self.c, self.d)
 
     '''
     surface this method calculate a surface of the object
@@ -69,17 +84,3 @@ class Rectangle():
     # def diagonal(self):
     #     diagonal = sqrt(pow(self.long, 2)+pow(self.large, 2))
     #     return diagonal
-
-
-class SpaceRectangle():
-    def __init__(self, **kwargs):
-        self.a = kwargs['a']
-        self.b = kwargs['b']
-        self.c = kwargs['c']
-        self.d = kwargs['d']
-
-    def __repr__(self):
-        return 'a : {} , b : {} , c : {} , d : {}'.format(self.a, self.b, self.c, self.d)
-
-    # def surface(self):
-    #     if isinstance

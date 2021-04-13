@@ -177,3 +177,44 @@ class Square():
     def diagonal(self):
         diagonal = sqrt(pow(self.side, 2)+pow(self.side, 2))
         return diagonal
+
+
+class Triangle():
+    def __init__(self, *args, **kwargs):
+
+        if len(args) > 0 and len(kwargs) > 0:
+            raise ValueError('Triangle class accept one type of argument')
+
+        if len(args) > 0:
+            try:
+                if len(args) == 3:
+                    self.side1 = args[0]
+                    self.side2 = args[1]
+                    self.side3 = args[2]
+            except ValueError as r:
+                print(r)
+
+        if len(kwargs) > 0:
+            if len(kwargs) == 3:
+                for key, value in kwargs.items():
+                    if not isinstance(value, Point):
+                        raise ValueError('all params must be points')
+
+            try:
+
+                self.a = kwargs["a"]
+                self.b = kwargs['b']
+                self.c = kwargs["c"]
+
+                self.side1 = Point.distance(self.a, self.b)
+                self.side2 = Point.distance(self.b, self.c)
+                self.side3 = Point.distance(self.c, self.a)
+
+            except ValueError as r:
+                print(r)
+
+    def __repr__(self):
+        try:
+            return 'a = {} , b = {} , c = {}  \n side1 = {} , side2 = {} , side3 = {}'.format(self.a, self.b, self.c, self.side1, self.side2, self.side3)
+        except:
+            return 'side1 = {} , side2 = {} , side3 = {}'.format(self.side1, self.side2, self.side3)

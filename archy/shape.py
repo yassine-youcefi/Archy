@@ -1,4 +1,6 @@
 
+from math import sqrt
+
 
 class Rectangle():
 
@@ -20,7 +22,13 @@ class Rectangle():
     '''
 
     def surface(self):
-        return self.long*self.large
+        surface = self.long*self.large
+        return surface
 
     def perimetre(self):
-        return ((2*self.large)+(2*self.long))
+        perimetre = ((2*self.large)+(2*self.long))
+        return perimetre
+
+    def diagonal(self):
+        diagonal = sqrt(pow(self.long, 2)+pow(self.large, 2))
+        return diagonal

@@ -47,14 +47,23 @@ class Rectangle():
 
             if len(kwargs) > 0:
                 for key, value in kwargs.items():
+
                     if not isinstance(value, Point):
                         raise ValueError('all params must be points')
+
+                if len(kwargs) < 4:
+                    raise KeyError('number of  kwargs must be 4')
                 self.a = kwargs['a']
                 self.b = kwargs['b']
                 self.c = kwargs['c']
                 self.d = kwargs['d']
 
+                self.long = Point.distance(self.a, self.b)
+                self.large = Point.distance(self.b, self.c)
+
             if len(args) > 0:
+                if len(args) < 2:
+                    raise KeyError('number of  args must be 2')
                 self.long = args[0]
                 self.large = args[1]
 
@@ -62,15 +71,15 @@ class Rectangle():
             print(r)
 
     def __repr__(self):
-        # if len(args) > 0:
         try:
-            return 'long : {} , large : {}'.format(self.long, self.large)
-        # if len(kwargs) > 0:
+            return 'a = {} , b = {} , c = {} , d = {} \n  long : {} , large : {} '.format(self.a, self.b, self.c, self.d, self.long, self.large)
         except:
-            return 'a = {} , b = {} , c = {} , d = {} '.format(self.a, self.b, self.c, self.d)
+
+            return 'long : {} , large : {}'.format(self.long, self.large)
 
     '''
     surface this method calculate a surface of the object
+
     '''
 
     # def surface(self):

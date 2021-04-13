@@ -8,4 +8,4 @@ p4 = Point(8, 10)
 
 
 g = Rectangle(a=p, b=p2, c=p3, d=p4)
-print(g)
+print(g.diagonal())

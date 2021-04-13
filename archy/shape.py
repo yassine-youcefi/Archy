@@ -31,8 +31,8 @@ class Rectangle():
 
     '''
     init *args :
-        long: longeur
-        large: large
+        length : length of the rectangle
+        width: width
 
     init **kwargs :
         points : a , b , c , d 
@@ -58,38 +58,38 @@ class Rectangle():
                 self.c = kwargs['c']
                 self.d = kwargs['d']
 
-                self.long = Point.distance(self.a, self.b)
-                self.large = Point.distance(self.b, self.c)
+                self.length = Point.distance(self.a, self.b)
+                self.width = Point.distance(self.b, self.c)
 
             if len(args) > 0:
                 if len(args) < 2:
                     raise KeyError('number of  args must be 2')
-                self.long = args[0]
-                self.large = args[1]
+                self.length = args[0]
+                self.width = args[1]
 
         except ValueError as r:
             print(r)
 
     def __repr__(self):
         try:
-            return 'a = {} , b = {} , c = {} , d = {} \n  long : {} , large : {} '.format(self.a, self.b, self.c, self.d, self.long, self.large)
+            return 'a = {} , b = {} , c = {} , d = {} \n  length  : {} , width : {} '.format(self.a, self.b, self.c, self.d, self.length, self.width)
         except:
 
-            return 'long : {} , large : {}'.format(self.long, self.large)
+            return 'length  : {} , width : {}'.format(self.length, self.width)
 
     '''
     surface this method calculate a surface of the object
 
     '''
 
-    # def surface(self):
-    #     surface = self.long*self.large
-    #     return surface
+    def surface(self):
+        surface = self.length * self.width
+        return surface
 
-    # def perimetre(self):
-    #     perimetre = ((2*self.large)+(2*self.long))
-    #     return perimetre
+    def perimetre(self):
+        perimetre = ((2*self.width)+(2*self.length))
+        return perimetre
 
-    # def diagonal(self):
-    #     diagonal = sqrt(pow(self.long, 2)+pow(self.large, 2))
-    #     return diagonal
+    def diagonal(self):
+        diagonal = sqrt(pow(self.length, 2)+pow(self.width, 2))
+        return diagonal

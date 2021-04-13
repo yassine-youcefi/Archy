@@ -1,1 +1,1 @@
-from .shape import Rectangle, Point
+from .shape import Rectangle, Point, Square

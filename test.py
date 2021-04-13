@@ -1,4 +1,4 @@
-from archy import Rectangle, Point
+from archy import Rectangle, Point, Square
 
 
 p = Point(1, 30)
@@ -7,5 +7,8 @@ p3 = Point(6, 20)
 p4 = Point(8, 10)
 
 
-g = Rectangle(a=p, b=p2, c=p3, d=p4)
-print(g.diagonal())
+R = Rectangle(5, 5)
+print(R.surface())
+
+S = Square(4)
+print(S.diagonal())

@@ -6,7 +6,7 @@ class Point():
 
     '''
     Point class :
-        points arguments : a , b  
+        points arguments : a , b
     '''
 
     def __init__(self, a, b):
@@ -30,12 +30,19 @@ class Point():
 class Rectangle():
 
     '''
-    init *args :
+
+    Rectangle class
+
+    have 2 types of declaration :
+
+    1 - init *args :
         length : length of the rectangle
         width: width
 
-    init **kwargs :
-        points : a , b , c , d 
+    2 - init **kwargs :
+        points : a , b , c , d
+
+
     '''
 
     def __init__(self, *args, **kwargs):
@@ -46,6 +53,7 @@ class Rectangle():
                     'the class can take one type of arguments args or kwargs')
 
             if len(kwargs) > 0:
+
                 for key, value in kwargs.items():
 
                     if not isinstance(value, Point):
@@ -53,6 +61,8 @@ class Rectangle():
 
                 if len(kwargs) < 4:
                     raise KeyError('number of  kwargs must be 4')
+
+                # if kwargs['a']
                 self.a = kwargs['a']
                 self.b = kwargs['b']
                 self.c = kwargs['c']
@@ -92,4 +102,78 @@ class Rectangle():
 
     def diagonal(self):
         diagonal = sqrt(pow(self.length, 2)+pow(self.width, 2))
+        return diagonal
+
+
+class Square():
+    '''
+
+    Square class
+    have 2 types of declaration:
+
+    1 - init * args:
+        length: length of the rectangle
+        width: width
+
+    2 - init ** kwargs:
+        points: a, b, c, d
+    '''
+
+    def __init__(self, *args, **kwargs):
+        try:
+            if len(args) > 0 and len(kwargs) > 0:
+                raise ValueError(
+                    'the class can take one type of arguments args or kwargs')
+
+            if len(kwargs) > 0:
+                for key, value in kwargs.items():
+
+                    if not isinstance(value, Point):
+                        raise ValueError('all params must be points')
+
+                if len(kwargs) < 4:
+                    raise KeyError('number of  kwargs must be 4')
+                self.a = kwargs['a']
+                self.b = kwargs['b']
+                self.c = kwargs['c']
+                self.d = kwargs['d']
+
+                self.side = Point.distance(self.a, self.b)
+
+            if len(args) > 0:
+                if len(args) < 1:
+                    raise KeyError('number of  args must be 1')
+                self.side = args[0]
+        except ValueError as r:
+            print(r)
+
+    def __repr__(self):
+        try:
+            return 'a = {} , b = {} , c = {} , d = {} \n  side = {} '.format(self.a, self.b, self.c, self.d, self.side)
+        except:
+
+            return 'side  : {}'.format(self.side)
+
+        '''
+        surface methode to calculate square surface 
+        '''
+
+    def surface(self):
+        surface = pow(self.side, 2)
+        return surface
+
+        '''
+        perimetre methode to calculate square perimetre 
+        '''
+
+    def perimetre(self):
+        perimetre = self.side * 4
+        return perimetre
+
+        '''
+         methode to calculate square diagonal 
+        '''
+
+    def diagonal(self):
+        diagonal = sqrt(pow(self.side, 2)+pow(self.side, 2))
         return diagonal

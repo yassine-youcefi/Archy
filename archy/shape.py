@@ -36,7 +36,7 @@ class Rectangle():
     have 2 types of declaration :
 
     1 - init *args :
-        length : length of the rectangle
+        height : height of the rectangle
         width: width
 
     2 - init **kwargs :
@@ -68,13 +68,13 @@ class Rectangle():
                 self.c = kwargs['c']
                 self.d = kwargs['d']
 
-                self.length = Point.distance(self.a, self.b)
+                self.height = Point.distance(self.a, self.b)
                 self.width = Point.distance(self.b, self.c)
 
             if len(args) > 0:
                 if len(args) < 2:
                     raise KeyError('number of  args must be 2')
-                self.length = args[0]
+                self.height = args[0]
                 self.width = args[1]
 
         except ValueError as r:
@@ -82,10 +82,10 @@ class Rectangle():
 
     def __repr__(self):
         try:
-            return 'a = {} , b = {} , c = {} , d = {} \n  length  : {} , width : {} '.format(self.a, self.b, self.c, self.d, self.length, self.width)
+            return 'a = {} , b = {} , c = {} , d = {} \n  height  : {} , width : {} '.format(self.a, self.b, self.c, self.d, self.height, self.width)
         except:
 
-            return 'length  : {} , width : {}'.format(self.length, self.width)
+            return 'height  : {} , width : {}'.format(self.height, self.width)
 
     '''
     surface this method calculate a surface of the object
@@ -93,15 +93,15 @@ class Rectangle():
     '''
 
     def surface(self):
-        surface = self.length * self.width
+        surface = self.height * self.width
         return surface
 
     def perimetre(self):
-        perimetre = ((2*self.width)+(2*self.length))
+        perimetre = ((2*self.width)+(2*self.height))
         return perimetre
 
     def diagonal(self):
-        diagonal = sqrt(pow(self.length, 2)+pow(self.width, 2))
+        diagonal = sqrt(pow(self.height, 2)+pow(self.width, 2))
         return diagonal
 
 
@@ -112,7 +112,7 @@ class Square():
     have 2 types of declaration:
 
     1 - init * args:
-        length: length of the rectangle
+        height: height of the rectangle
         width: width
 
     2 - init ** kwargs:

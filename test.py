@@ -28,4 +28,7 @@ print(f"Square side perimetre > {S2.perimetre()}\n")
 T1 = Triangle(a=p1, b=p2, c=p3)
 T2 = Triangle(5, 2, 3)
 print(f"Triangle with point params > {T1}\n")
+print(f"Triangle with point perimetre > {T1.perimetre()}\n")
+
 print(f"Triangle with side params > {T2}\n")
+print(f"Triangle with side perimetre > {T2.perimetre()}\n")

@@ -218,3 +218,7 @@ class Triangle():
             return 'a = {} , b = {} , c = {}  \n side1 = {} , side2 = {} , side3 = {}'.format(self.a, self.b, self.c, self.side1, self.side2, self.side3)
         except:
             return 'side1 = {} , side2 = {} , side3 = {}'.format(self.side1, self.side2, self.side3)
+
+    def perimetre(self):
+        perimetre = self.side1+self.side2+self.side3
+        return perimetre

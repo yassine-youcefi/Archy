@@ -7,7 +7,19 @@ As it can calculate the area of shapes and their perimeter with several types of
 
 ## shapes:
 
-- **Point** : accept arguments : a , b, this class contain ` __init__` and `__repr__` methods.
+- **Point** : accept arguments : a , b represented the point coordinates in the orthogonal and homogeneous parameters  
+ 
+ This class contain ` __init__`, `__repr__` and 'distance' methods, where the distance method take a point object as parameter to calculate the distance between the points.
+
+ Example :
+
+```python
+p1 = Point(1, 30)
+p2 = Point(4, 80)
+
+p1.distance(p2)
+
+```
 
 - **Square** : Square class have 2 types of declaration :
 
@@ -45,3 +57,67 @@ print(f"Square side surface > {S1.surface()}\n")
 print(f"Square side perimetre > {S1.perimetre()}\n")
 
 ```
+
+- **Triangle** : Triangle class have 2 types of declaration :
+
+  - init \* args:
+      accept 3 params type(int) representing side1, side2, side3
+
+      example:
+      ```python
+        T = Triangle(5, 2, 3)
+      ```
+      
+  <br/>  
+  
+  - init \*\* kwargs:
+      accept 3 params (a,b,c) type(Point) representing side1, side2, side3
+
+      example:
+      ```python
+      from archiy import Point, Triangle
+      p1 = Point(1, 30)
+      p2 = Point(4, 80)
+      p3 = Point(6, 20)
+
+      T = Triangle(a=p1, b=p2, c=p3)
+
+      ```
+This class contain ` __init__` , `__repr__` and 'perimetre'.
+
+  The perimetre method allow to calculate the triangle perimeter :
+
+
+  ```python
+
+      from archiy import Triangle
+      T = Triangle(1,2,10)
+      T1.perimetre() 
+
+```
+
+- **Rectangle** : Rectangle class have 2 types of declaration :
+    - init \* args: accept 2 params : (height,width)
+        
+        example:
+        ```python
+        from archiy import
+        R = Rectangle(5,2)
+        ```
+    - init \*\* kwargs: accept 4 params (a,b,c,d) type(Point)
+
+        example:
+        ```python
+        from archiy import Point, Rectangle
+        p1 = Point(1, 30)
+        p2 = Point(4, 80)
+        p3 = Point(6, 20)
+        p4 = Point(8, 10)
+
+        ### Rectangle ###
+        R = Rectangle(5, 5)
+        print(f"Rectangle > {R}")
+        print(f"Rectangle Surface > {R.surface()} \n")
+        
+        ```
+

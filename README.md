@@ -5,6 +5,9 @@ As it can calculate the area of shapes and their perimeter with several types of
 
 [Archiy](https://pypi.org/project/Archiy/1.0.0/)
 
+[![PyPI version](https://badge.fury.io/py/Archiy.svg)](https://badge.fury.io/py/Archiy)
+
+
 ## shapes:
 
 - **Point** : accept arguments : a , b represented the point coordinates in the orthogonal and homogeneous parameters  

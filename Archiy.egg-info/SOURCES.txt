@@ -1,0 +1,8 @@
+README.md
+setup.py
+Archiy.egg-info/PKG-INFO
+Archiy.egg-info/SOURCES.txt
+Archiy.egg-info/dependency_links.txt
+Archiy.egg-info/top_level.txt
+archy/__init__.py
+archy/shape.py

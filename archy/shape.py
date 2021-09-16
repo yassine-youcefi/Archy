@@ -34,8 +34,11 @@ class Point():
             print(r.__class__() + r)
     
     # create fuction that allow to plot point instance with matplotlib
-
-            
+    def plot_line(self, other):
+        xpoints = np.array([self.a, self.b])        
+        ypoints = np.array([other.a, other.b])   
+        plt.plot(xpoints, ypoints)
+        plt.show() 
 
 
 class Rectangle():

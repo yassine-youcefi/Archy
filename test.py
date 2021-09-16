@@ -7,13 +7,10 @@ p3 = Point(6, 20)
 p4 = Point(8, 10)
 
 ### Point ###
-print('plot -- ')
-# p1.plot(color = 'red')
-p = Plot(p1, p2, p3, p4)
-# p.__repr__()
-# plot points
-# p.plot_points()
-p.plot_points_line()
+# p1.__repr__()
+# p1.x()
+# p1.y()
+# p1.list()
 
 # ### Rectangle ###
 # R = Rectangle(5, 5)
@@ -42,3 +39,20 @@ p.plot_points_line()
 
 # print(f"Triangle with side params > {T2}\n")
 # print(f"Triangle with side perimetre > {T2.perimetre()}\n")
+
+
+
+### plot ###
+print('plot -- ')
+# p1.plot(color = 'red')
+p = Plot(p1, p2, p3, p4)
+# p.__repr__()
+# plot points
+# p.plot_points()
+# p.plot_points_line()
+
+
+S = Square(a=p1, b=p2, c=p3, d=p4)
+P = Plot()
+p.plot_square(S)
+

@@ -143,12 +143,14 @@ class Square():
     '''
 
     def __init__(self, *args, **kwargs):
+        self.type = None
         try:
             if len(args) > 0 and len(kwargs) > 0:
                 raise ValueError(
                     'the class can take one type of arguments args or kwargs')
 
             if len(kwargs) > 0:
+                self.type = 'kwargs'
                 for key, value in kwargs.items():
 
                     if not isinstance(value, Point):
@@ -201,7 +203,11 @@ class Square():
         diagonal = sqrt(pow(self.side, 2)+pow(self.side, 2))
         return diagonal
 
+    def points(self):
+        return [self.a, self.b, self.c, self.d]
 
+    def side(self):
+        return float(self.side)
 class Triangle():
     def __init__(self, *args, **kwargs):
 
@@ -248,7 +254,6 @@ class Triangle():
 
 class Plot():
     def __init__(self, *args, **kwargs):
-        self.points = [arg for arg in args]
         self.x = []
         self.y = []
         if len(args) > 0 and len(kwargs) > 0:
@@ -271,7 +276,6 @@ class Plot():
         plt.show()
 
     def plot_points_line(self):
-        
         if len(self.points) > 0:
             try:
                 for arg in self.points:
@@ -282,3 +286,15 @@ class Plot():
             except ValueError as r:
                 print(r)
         plt.show()
+
+    def plot_square(self, square):
+        self.side = square.side
+        self.index = square.a
+        if square:
+            plt.axes()
+            print('---------', type(self.index))
+            rectangle = plt.Rectangle((self.index.x(),self.index.y()), self.side, self.side, fc='white',ec="red")
+            plt.gca().add_patch(rectangle)
+            plt.axis('scaled')
+            plt.show()
+                

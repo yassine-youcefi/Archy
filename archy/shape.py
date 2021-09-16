@@ -269,3 +269,16 @@ class Plot():
             except ValueError as r:
                 print(r)
         plt.show()
+
+    def plot_points_line(self):
+    
+        if len(self.points) > 0:
+            try:
+                for arg in self.points:
+                    x = arg.x()
+                    y = arg.y()
+                    print(f' x = {x}, y = {y}')
+                plt.plot(self.points[0].list(), self.points[1].list())
+            except ValueError as r:
+                print(r)
+        plt.show()

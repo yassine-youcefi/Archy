@@ -8,7 +8,8 @@ p4 = Point(8, 10)
 
 ### Point ###
 print('plot -- ')
-p1.plot_line(p2)
+p1.plot(color = 'red')
+
 
 # ### Rectangle ###
 # R = Rectangle(5, 5)

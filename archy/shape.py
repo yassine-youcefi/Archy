@@ -16,6 +16,11 @@ class Point():
     def __repr__(self):
         return "({} , {})".format(self.a, self.b)
 
+    '''
+    distance method take a point as argument
+    to calculate the distance between the points
+    '''
+
     def distance(self, other):
         try:
             if not isinstance(other, Point):

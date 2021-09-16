@@ -1,4 +1,4 @@
-from archy import Rectangle, Point, Square, Triangle
+from archy import Rectangle, Point, Square, Triangle, Plot
 
 
 p1 = Point(1, 30)
@@ -8,8 +8,10 @@ p4 = Point(8, 10)
 
 ### Point ###
 print('plot -- ')
-p1.plot(color = 'red')
-
+# p1.plot(color = 'red')
+p = Plot(p1, p2)
+p.__repr__()
+p.plot()
 
 # ### Rectangle ###
 # R = Rectangle(5, 5)

@@ -18,6 +18,13 @@ class Point():
     def __repr__(self):
         return "({} , {})".format(self.a, self.b)
 
+    def x(self):
+        return self.a
+    def y(self):
+        return self.b
+    def list(self):
+        return [self.a, self.b]    
+
     '''
     distance method take a point as argument
     to calculate the distance between the points
@@ -36,8 +43,11 @@ class Point():
     '''
     plot method take a point as argumen and plot it
     '''
-    def plot(self, color):
-        plt.plot(self.a,self.b, 'o',color=color)
+    def plot(self, color=None):
+        if color:
+            plt.plot(self.a,self.b, 'o',color=color)
+        else:
+            plt.plot(self.a,self.b, 'o')
         plt.show() 
 
 class Rectangle():
@@ -235,3 +245,27 @@ class Triangle():
     def perimetre(self):
         perimetre = self.side1+self.side2+self.side3
         return perimetre
+
+class Plot():
+    def __init__(self, *args, **kwargs):
+        self.points = [arg for arg in args]
+        if len(args) > 0 and len(kwargs) > 0:
+            raise ValueError('Plot class accept one type of argument')
+
+
+    def __repr__(self):
+        print(self.points)
+    
+    # create methode for class plot thad allow to plot the self.points 
+    def plot_points(self):
+
+        if len(self.points) > 0:
+            try:
+                for arg in self.points:
+                    x = arg.x()
+                    y = arg.y()
+                    print(f' x = {x}, y = {y}')
+                plt.plot(self.points[0].list(), self.points[1].list(), 'o')
+            except ValueError as r:
+                print(r)
+        plt.show()

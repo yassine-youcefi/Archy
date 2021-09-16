@@ -51,8 +51,9 @@ p = Plot(p1, p2, p3, p4)
 # p.plot_points()
 # p.plot_points_line()
 
-
-S = Square(a=p1, b=p2, c=p3, d=p4)
 P = Plot()
-p.plot_square(S)
+T = Triangle(a=p1, b=p2, c=p4)
+# S = Square(a=p1, b=p2, c=p3, d=p4)
+# p.plot_square(S)
+p.plot_triangle(T)
 

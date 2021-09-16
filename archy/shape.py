@@ -1,6 +1,7 @@
 
 from math import sqrt
 import matplotlib.pyplot as plt
+from matplotlib.patches import Polygon
 import numpy as np
 
 
@@ -251,6 +252,8 @@ class Triangle():
     def perimetre(self):
         perimetre = self.side1+self.side2+self.side3
         return perimetre
+    
+    # def surface(self):
 
 class Plot():
     def __init__(self, *args, **kwargs):
@@ -296,5 +299,19 @@ class Plot():
             rectangle = plt.Rectangle((self.index.x(),self.index.y()), self.side, self.side, fc='white',ec="red")
             plt.gca().add_patch(rectangle)
             plt.axis('scaled')
+            plt.show()
+
+    def plot_triangle(self, triangle):
+        self.a = triangle.a
+        self.b = triangle.b
+        self.c = triangle.c
+        if triangle:
+            print('max = ',max(self.a.y(),self.b.y(),self.c.y()))
+            pts = np.array([[self.a.x(),self.a.y()], [self.b.x(),self.b.y()], [self.c.x(),self.c.y()]])
+            p = Polygon(pts, closed=False)
+            ax = plt.gca()
+            ax.add_patch(p)
+            ax.set_xlim(1,max(self.a.x(),self.b.x(),self.c.x()))
+            ax.set_ylim(1,max(self.a.y(),self.b.y(),self.c.y()))
             plt.show()
                 

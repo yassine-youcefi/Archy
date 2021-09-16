@@ -9,11 +9,10 @@ p4 = Point(8, 10)
 ### Point ###
 print('plot -- ')
 # p1.plot(color = 'red')
-p = Plot(p1, p2)
-p.__repr__()
+p = Plot(p1, p2, p3, p4)
+# p.__repr__()
 # plot points
-p.plot_points()
-# plot points line
+# p.plot_points()
 p.plot_points_line()
 
 # ### Rectangle ###

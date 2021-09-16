@@ -249,6 +249,8 @@ class Triangle():
 class Plot():
     def __init__(self, *args, **kwargs):
         self.points = [arg for arg in args]
+        self.x = []
+        self.y = []
         if len(args) > 0 and len(kwargs) > 0:
             raise ValueError('Plot class accept one type of argument')
 
@@ -256,29 +258,27 @@ class Plot():
     def __repr__(self):
         print(self.points)
     
-    # create methode for class plot thad allow to plot the self.points 
     def plot_points(self):
-
+        
         if len(self.points) > 0:
             try:
                 for arg in self.points:
-                    x = arg.x()
-                    y = arg.y()
-                    print(f' x = {x}, y = {y}')
-                plt.plot(self.points[0].list(), self.points[1].list(), 'o')
+                    self.x.append(arg.x())
+                    self.y.append(arg.y())
+                plt.scatter(self.x, self.y)
             except ValueError as r:
                 print(r)
         plt.show()
 
     def plot_points_line(self):
-    
+        
         if len(self.points) > 0:
             try:
                 for arg in self.points:
-                    x = arg.x()
-                    y = arg.y()
-                    print(f' x = {x}, y = {y}')
-                plt.plot(self.points[0].list(), self.points[1].list())
+                    self.x.append(arg.x())
+                    self.y.append(arg.y())
+                print(f'x = {self.x} \n y = {self.y} ')      
+                plt.plot(self.x, self.y, marker='X')
             except ValueError as r:
                 print(r)
         plt.show()

@@ -1,5 +1,7 @@
 
 from math import sqrt
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 class Point():
@@ -30,6 +32,10 @@ class Point():
 
         except ValueError as r:
             print(r.__class__() + r)
+    
+    # create fuction that allow to plot point instance with matplotlib
+
+            
 
 
 class Rectangle():

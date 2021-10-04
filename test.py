@@ -57,3 +57,7 @@ T = Triangle(a=p1, b=p2, c=p4)
 # p.plot_square(S)
 p.plot_triangle(T)
 
+
+
+# add plot rectangle
+

@@ -1,7 +1,6 @@
 # Archy
 
- This is a  python package is created to facilitate calculations in the field of aerospace Mathematics Engineering in particular and mathematics geometry in general
-As it can calculate the area of shapes and their perimeter with several types of input
+"Archy" is a Python package designed to simplify complex calculations in the aerospace engineering field, with a particular focus on mathematical geometry. It offers the capability to compute the area and perimeter of various shapes, accommodating multiple input formats for ease of use.
 
 [Archiy](https://pypi.org/project/Archiy/1.0.0/)
 
